@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Scores Web Client</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Features-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean1.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-inverse navbar-fixed-top navigation-clean">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><i class="fa fa-gamepad text-primary"></i> <span> Game Scores Web Client </span></a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="#games">Games </a></li>
+                        <li role="presentation"><a href="#about">About</a></li>
+                        <li role="presentation"><a href="http://jmvazquez.com">Contact <i class="fa fa-external-link"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="games" style="margin-top:70px;">
+        <div class="container">
+            <div class="features-clean">
+                <div class="intro">
+                    <h1 class="text-center text-primary"> <span>Games </span></h1>
+                    <p class="text-center">The following data comes from the Game Scores Server, retrieved via its REST API.</p>
+                </div>
+            </div>
+            <p class="no-games alert alert-warning">No games found.</p>
+            <div id="games-list">
+                <!-- Games will be added to this container. -->
+            </div>
+        </div>
+    </div>
+    <div id="about" class="features-clean">
+        <div class="container">
+            <div class="intro">
+                <h1 class="text-center text-primary"><span>About </span> </h1>
+                <p class="text-center">This is an example web client for the Game Scores Web Server/API, showing data for an example game system making use of the API.</p>
+            </div>
+            <div class="row features">
+                <div class="col-md-4 col-sm-4 item"><i class="fa fa-gamepad icon text-success"></i>
+                    <h3 class="name">Game System</h3>
+                    <p class="description">A custom game system has been developed to demonstrate the use of the the API to save high scores and retrieve level data (challenges).</p>
+                </div>
+                <div class="col-md-4 col-sm-4 item"><i class="fa fa-database text-warning icon"></i>
+                    <h3 class="name">Web Server / API</h3>
+                    <p class="description">Serves a REST API to communicate with the database, storing and serving game data, scores and challenges to clients.</p>
+                </div>
+                <div class="col-md-4 col-sm-4 item"><i class="fa fa-eye text-info icon"></i>
+                    <h3 class="name">Web Client</h3>
+                    <p class="description">This site. An example web application that uses the API to show a game's information and high scores table.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-basic">
+        <footer>
+            <ul class="list-inline">
+                <li><a href="#games">Games </a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="http://jmvazquez.com">Contact <i class="fa fa-external-link"></i></a></li>
+            </ul>
+            <p class="copyright">Developed by Jesica M. Vázquez Rodríguez © 2016</p>
+        </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
