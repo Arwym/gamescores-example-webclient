@@ -1,10 +1,10 @@
 $(document).ready(function() {
      // Set
-	var apibaseurl = 'http://localhost:80';
+	var apibaseurl = 'http://localhost:80/gamescores-server/api';
 	var games = [];
      // Request
 	var request = $.ajax({
-	  url: apibaseurl + '/gamescores-server/api/games',
+	  url: apibaseurl + '/games',
 	}).done(function(data) {
 		games = data;
           var promises = [];
@@ -13,7 +13,7 @@ $(document).ready(function() {
                // Because the HTML should not be generated until all games and respective score have been fetched
                var deferred = $.Deferred();
 			$.ajax({
-				url: apibaseurl + '/gamescores-server/api/scores/' + game.game_id + '/5'
+				url: apibaseurl + '/scores/' + game.game_id + '/5'
 			}).done(function(data){
 				games[index].scores = data;
                     deferred.resolve();
@@ -44,6 +44,7 @@ $(document).ready(function() {
                          '                        <table class="game-scores table">' +
                          '                            <thead>' +
                          '                               <tr>' +
+                         '                                    <th>#</th>' +
                          '                                    <th>Score </th>' +
                          '                                    <th>Player </th>' +
                          '                                    <th>Date </th>' +
@@ -62,7 +63,8 @@ $(document).ready(function() {
                          );
                          $.each(game.scores, function(index, score) {
                               $('.game#game-' + game.game_id + " .game-scores.table tbody").append(
-                              '    <tr class="score-record">' +
+                         '         <tr class="score-record">' +
+                         '              <td>' +  (index + 1) + '</td>' +
                          '              <td>' + score.player_name + '</td>' +
                          '              <td>' + score.value + '</td>' +
                          '              <td>' + score.post_timestamp + '</td>' +
